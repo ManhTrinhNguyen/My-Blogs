@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+</head>
+<body>
+  <!-- Data Structrue -->
+  <div>
+    <h1>Data structure</h1>
+    <!-- What is Binary Search Tree -->
+    <div>
+      <h2>What is Binary Search Tree?</h2>
+      <ul>
+        <li>Look up (O log n)</li>
+        <li>Insert (O log n)</li>
+        <li>Delete (O log n)</li>
+        <li>BST is a type of binary tree Data Structures used for organizing and storing data in a way that allows efficient searching, insertion, and deletion operations</li>
+        <li>Each node can have at most two children, often referred to as the left child and the right child</li>
+        <li>All nodes in the left subtree have values less than node's value</li>
+        <li>All nodes in the right subtree have values greater than node's value</li>
+        <h3>Balance and Unbalance</h3>
+        <li>Unbalance mignt turn into Long Linklists . Look up, Inset, Delete (O of n)</li>
+        <li>Balance . Lookup, Insert, Delete (O log n)</li>
+        <h3>Pros and Cons</h3>
+        <li>Better than O(n), Ordered, flexible size</li>
+        <li>No O(1) Operations</li>
+        <h3>Balanced BST: AVL Tree, Red Black Tree</h3>
+        <li>AVL Tree : <a href="https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7" target="_blank">Resources</a>, <a href="https://www.cs.usfca.edu/~galles/visualization/AVLtree.html" target="_blank">How it work</a></li>
+        <li>Red Black Tree : <a href="https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5" target="_blank">Resources</a>, <a href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html" target="_blank">How it work</a></li>
+      </ul>
+    </div>
+    <!-- Binary Heap -->
+    <div>
+      <h2>What is Binary Heap?</h2>
+      <ul>
+        <li>Look up O(n)</li>
+        <li>Insert O (log n)</li>
+        <li>Delete O (log n)</li>
+        <li>Binary Heap is a specialized binary tree-based data structure that satisfies the heap property. The heap property dictates for a min-heap, every parent node has a value less than or equal to the values of its children nodes, while for a max-heap, every parent node has a value greater than or equal to the values of its children nodes. </li>
+        <li>Insert from left to right</li>
+        <li>Good for Priority Queue</li>
+        <h3>Pros and Cons</h3>
+        <li>Props : Better than O(n), Priority, Flexibile Size, Fast Insert</li>
+        <li>Cons : Slow Lookup</li>
+      </ul>
+    </div>
+    <!-- Trie -->
+    <div>
+      <h2>What is Trie ?</h2>
+      <ul>
+        <li>O of Length</li>
+        <li>In a trie, each node represents a single character, and the edges from the nodes represent the possible characters that can follow that node to form valid words or sequences. The path from the root of the trie to a particular node represents a string, and the characters along that path represent the characters in the string. The leaf nodes of the trie indicate the end of a valid string.</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Algorithms -->
+  <div>
+    <h1>Algorithms</h1>
+    <!-- What is Algorithms ? -->
+    <div>
+      <h2>What is Algorithms?</h2>
+      <ul>
+        <li>Algorithms are function that programmer write</li>
+        <li>Simple steps a process to perform desire action with computer</li> 
+        <li>If combine Algorithms with Datastructure. Algorithms allow to use the Datastructure to perform action on that data</li>
+        <li>Data Structures + Algorithms = Programs Or :</li>
+        <li>class {} + function() = Programs</li>
+      </ul>
+    </div>
+    <!-- What is Recursion -->
+    <div>
+      <h2>What is Recursion?</h2>
+      <ul>
+        <li>When get into Sorting or Binary Search tree we will use Recursion a lot</li>
+        <li>Define something in term of itself</li>
+        <li>A function call itself is Recursive</li>
+        <h3>Recursive have 3 paths</h3>
+        <li>1 : Identify Recursive Case (Call a function again)</li>
+        <li>2 : Ifentify Base Case ( Stop the function )</li>
+        <li>3 : Get closer and closer and return when needed. Usually you have 2 returns (base case return and recursive return)</li>
+        <li>Anything you do with a recursion CAN be done iteratively (loop)</li>
+        <h3>When to use Recursive?</h3>
+        <h4>Everytime you are using a tree or converting something into a tree, consider recursion.</h4>
+        <li>1 : Divided into a number of subproblems that are smaller instances of the same problem</li>
+        <li>2 : Each instances of the subproblems is identical in nature</li>
+        <li>3 : The solutions of each subproblems can be combined to sovle the problem at hand.</li>
+      </ul>
+    </div>
+    <!-- Sorting -->
+    <div>
+      <h2>What is Sorting ?</h2>
+      <ul>
+        <h3>Bubble Sort</h3>
+        <li> Bubble Sort is a simple sorting algorithm that repeatedly steps through a list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, indicating that the list is sorted.</li>
+        <li>Start at the beginning of the list.</li>
+        <li>Compare the first two elements. If the first element is greater than the second element, swap them.</li>
+        <li>Move to the next pair of elements (second and third), and continue comparing and swapping if necessary.</li>
+        <li>Continue this process, moving through the entire list, until you reach the end. At this point, the largest element will have "bubbled up" to the end of the list.</li>
+        <li>Repeat the above steps, excluding the last element (since it's already sorted), and continue until the entire list is sorted.</li>
+        <h3>Quick Sort</h3>
+        <li>O(n log n)</li>
+        <li>Quick Sort is to select a pivot element from the array and partition the array into two sub-arrays - one containing elements less than the pivot and the other containing elements greater than the pivot. Then, recursively apply the same process to the sub-arrays until the entire array is sorted.</li>
+        <h3>Merge Sort (Most Common)</h3>
+        <li>O(n log n)</li>
+        <li>Merge Sort follows divide-and-conquer paradigm to efficient sort an array or list of elements</li>
+        <li>Merge Sort is to divide the input array into smaller subarrays, recursively sort them, and then merge the sorted subarrays to produce final sort array</li>
+        <li>Divide: The input array is divided into two roughly equal halves.</li>
+        <li>Conquer: Each of the divided subarrays is recursively sorted using Merge Sort.</li>
+        <li>Merge: The sorted subarrays are then merged back together into a single sorted array. </li>
+        <h3>Selection Sort</h3>
+        <li>Selection Sort works by repeatly selecting the smallest(or lagest) element from the unsorted portion of an array and swapping it with the element at the beginning of the sorted portion. This process is repeated until the entrie array is sorted</li>
+        <li>Find the minimum (or maximum): The algorithm begins by finding the smallest (or largest, depending on whether you're sorting in ascending or descending order) element in the unsorted portion of the array.</li>
+        <li>Swap: Once the smallest (or largest) element is found, it is swapped with the element at the beginning of the unsorted portion. This effectively extends the sorted portion of the array.</li>
+        <li>Repeat: Steps 1 and 2 are repeated for the remaining unsorted elements, gradually expanding the sorted portion of the array until all elements are in their correct positions.</li>
+        <h3>Radix Sort</h3>
+        <li>Radix Sort is a non-comparative integer sorting algorithm that works by sorting numbers digit by digit</li>
+        <li>Choose the Base: Radix Sort requires a base, which is usually 10 for decimal numbers. This means that each digit can have 10 possible values (0 to 9).</li>
+        <li>Iterate through Digits: Starting from the least significant digit (rightmost digit), Radix Sort iterates through all the digits of the input numbers.</li>
+        <li>Bucketing: For each digit position, the algorithm places the numbers into "buckets" based on the value of the current digit. For example, all numbers with the same LSD will go into the same bucket.</li>
+        <li>Collecting: After placing the numbers into buckets according to the current digit, the algorithm collects the numbers back from the buckets, forming a partially sorted list.</li>
+        <li>Repeat: Steps 2 to 4 are repeated for each subsequent digit position, moving from the LSD towards the MSD. After all the digits have been considered, the numbers will be completely sorted.</li>
+      </ul>
+    </div>
+    <!-- BFS - DFS (Searching) -->
+    <div>
+      <h1>Searching/Traversal</h1>
+      <ul>
+        <h2>Linear Search</h2>
+        <li>Linear search, also known as sequential search, is a simple algorithm used to find the position of a target value within a list or array. It involves checking each element in the list one by one until the target value is found or the end of the list is reached. Linear search is straightforward but may not be the most efficient for large datasets.</li>
+        <h2>Binary Search</h2>
+        <li>Binary search is a more efficient algorithm than linear search for finding a target value within a sorted array or list. It follows a divide-and-conquer approach, repeatedly narrowing down the search range by comparing the target value with the middle element of the current range. Binary search is particularly useful when dealing with large datasets, as it dramatically reduces the number of comparisons needed to find the target value.</li>
+        <li>Input: You have a sorted array (or list) of elements and a target value that you want to find within the array.</li>
+        <li>Process:
+          Start with the entire sorted array.
+          Calculate the middle index of the current range by taking the average of the lower and upper bounds.
+          Compare the value at the middle index to the target value.
+          If the value at the middle index is equal to the target value, return the index of the middle element.
+          If the value at the middle index is less than the target value, update the lower bound to be one index greater than the middle index and repeat the process in the upper half of the range.
+          If the value at the middle index is greater than the target value, update the upper bound to be one index less than the middle index and repeat the process in the lower half of the range.
+          Continue this process, dividing the range in half with each iteration, until the target value is found or the range is empty.</li>
+          <li>Output: If the target value is found, return the index of the element in the array. If the target value is not found, return a special value (e.g., -1) to indicate that the value is not present in the array.</li>
+      </ul>
+    </div>
+  </div>
+  <!-- Redux -->
+  <div>
+    <h1>Redux</h1>
+      <ul>
+        <h2>Redux Thunk</h2>
+        <li>Redux Thunk is the middleware for Redux. It allow to write Asynchronouse logic and handles Side Effect in Redux action</li>
+        <li>Action Creators: Normally, an action creator in Redux returns an action object, which is then dispatched to the store. With Redux Thunk, action creators can return functions in addition to action objects.</li>
+        <li>Thunks Function : is a function that wrap an Asynchronouse operations and return another function that can dispatch actions. This allows to delay the dispatching of actions until the Asynchronouse operation complete</li>
+        <h3>How to use Redux Thunk</h3>
+        <h4>CreateAsyncThunk</h4>
+        <li>To fetch API . Use the createAsyncThunk (in Redux Toolkits)</li>
+        <li>createAsyncThunk takes two arguments : a string action type and Asynchronouse callback function that return Promise</li>
+        <h4>ExtraReducers</h4>
+        <li>The extraReducers is used within createSlice call to define how the state should change in response to various actions . It's powerful feature that simplifies the process of handling different action types and updating the state.</li>
+        <li>The extraReducers mean to handle actions that are not directly tied to slice's reducers . Example , might use them to handle actions dispatch from async thunk or other </li>
+        <li>ExtraReducers take builder as a argument . Then we can use addCase to add some other action case</li>
+        <li>addCase takes two argument . Action type and the Reducer function that describes how the state should be updated when that action is dispatched</li>
+        <h4>Step by Step</h4>
+        <li>1 . Create Thunk function to fetch data asyncoronousely (using createAsyncThunk)</li>
+        <li>2 . Inside extraReducers addCase to the reducer. If pending (fetchSomething.pending, ) => statis will be loading , if fulfilled (fetchSomething.fulfilled) => succeeded and return data or take data from this , if rejected (fetchSomething.rejected) => return error message </li>
+      </ul>
+  </div>
+  <script src="algorithm.js"></script>
+</body>
+</html>
