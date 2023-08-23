@@ -60,7 +60,32 @@ class BinarySearchTree {
   remove(value) {
     if (!this.root) return false 
     
-    
+  }
+
+  breadthFirstSearch() {
+    let currentNode = this.root
+    // Actual List will be answer , [] will insert number into 
+    let list = []
+    // Queue that to keep track the level we at so that we can keep track the children once we go through it
+    let queue = []
+    // First : Add to the queue the very first item 
+    queue.push(currentNode)
+    // use while loop to go from current Node to child Node (left to right)
+    while (queue.length > 0) {
+      // take out and remove the first item from the queue and put it as currentNode 
+      currentNode = queue.shift();
+      // put the first answer into the list 
+      list.push(currentNode.value)
+      // if currentNode have left child . Will put to the queue 
+      if (currentNode.left) {
+        queue.push(currentNode.left)
+      }
+      // if currentNode have right child . Will put to the queue 
+      if (currentNode.right) {
+        queue.push(currentNode.right)
+      }
+    }
+    return list
   }
 
 }

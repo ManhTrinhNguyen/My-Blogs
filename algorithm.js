@@ -1,27 +1,37 @@
+// Given 2 sorted List . Merge 2 lists into 1 sorted list 
+const list1 = [1, 2, 4]
+const list2 = [1, 3, 4]
 
-// give 2 non-negative integers 
-// digits are stored in reverse order
-// each node contain signle digit 
-// Add two number and return sum as a linked list 
-const l1 = [2, 4, 3]
-const l2 = [5, 6, 4]
+const mergeTwoLists = function (list1, list2) {
+  let result = new ListNode()
+  let dummy = result
 
-function addTwoNumber(l1, l2) {
-  let carry = 0 
-  let result = new ListNode(-1) 
-  let dummy = result 
-  while (l1 || l2 || carry) {
-    let l1Val = l1 ? l1.value : 0
-    let l2Val = l2 ? l2.value : 0
+  while (list1 && list2) {
+    let list1Val = list1 && list1.val 
+    let list2Val = list2 && list2.val
+    
+    if (list1Val < list2Val) {
+      result.next = list1
+      list1 = list1 ? list1.next : null
+    } else {
+      result.next = list2
+      list2 = list2 ? list2.next : null
+    }
 
-    let nextDigit = (l1Val + l2Val + carry)%10
-    result.next = new ListNode(nextDigit)
-    result = result.next 
+    result = result.next
 
-    carry = Math.floor((l1Val + l2Val + carry) / 10)
-    l1 = l1 ? l1.next : null 
-    l2 = l2 ? l2.next : null 
+    if(list1) {
+      result.next = list1
+    } 
+    if(list2) {
+      result.next = list2
+    }
   }
   return dummy.next
 }
-console.log(addTwoNumber(l1, l2));
+console.log(mergeTwoLists(list1, list2));
+/*
+  list 2 : 1 3 3 3 4
+  list 1 : 1 1 2 4,4
+  [1, 1, 2, 3 , 4]
+ */
