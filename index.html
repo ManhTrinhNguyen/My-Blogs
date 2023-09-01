@@ -157,6 +157,16 @@
           <li>Lower memory than BFS</li>
           <li>Pros : Less Memory, Does the Path Exist ?</li>
           <li>Cons : Can Get Slow</li>
+          <h3>3 Ways to implement DFS</h3>
+          <li>In-order: Traversal in order</li>
+          <li>Pre-order: Start with Parent Node then child Node left to right (Good for re-create the tree)</li>
+          <li>Post-order: Go from all the way down then to the right then to the Parent</li>
+          <!-- Graph DSF and BFS -->
+          <h2>Graph DFS and BFS</h2>
+          <h3>Graph: BFS</h3>
+          <li>Shortest path , more Memory</li>
+          <h3>Graph: DFS</h3>
+          <li>DFS : Check if you see it exist</li>
       </ul>
     </div>
   </div>
@@ -164,6 +174,20 @@
   <div>
     <h1>Redux</h1>
       <ul>
+        <h2>Redux Toolkits</h2>
+        <h3>1: Create Redux Store</h3>
+        <li>Use ConfigureStore to create store</li>
+        <li>Inside ConfigureStore : reducer</li>
+        <li>Store can store multiple slice of reducer</li>
+        <h2>2 :Providing global store to the app</h2>
+        <li>Use Provider to provide global store to the app</li>
+        <h2>Create Redux slice</h2>
+        <li>Slice come from splitting up redux state object into multiple slices of state</li>
+        <li>Slice is the collection of reducer logic and action for single feature in the app</li>
+        <li>Use CreateSlice to create slice in react toolkit</li>
+        <li>Create initial State to keep the state</li>
+        <li>In CreateSlice : first come with the name, initialState and then reducers</li>
+        <li>Then import sliceReducer to the store</li>
         <h2>Redux Thunk</h2>
         <li>Redux Thunk is the middleware for Redux. It allow to write Asynchronouse logic and handles Side Effect in Redux action</li>
         <li>Action Creators: Normally, an action creator in Redux returns an action object, which is then dispatched to the store. With Redux Thunk, action creators can return functions in addition to action objects.</li>
@@ -182,6 +206,6 @@
         <li>2 . Inside extraReducers addCase to the reducer. If pending (fetchSomething.pending, ) => statis will be loading , if fulfilled (fetchSomething.fulfilled) => succeeded and return data or take data from this , if rejected (fetchSomething.rejected) => return error message </li>
       </ul>
   </div>
-  <script src="algorithm.js"></script>
+  <script src="binarySearchTree.js"></script>
 </body>
 </html>

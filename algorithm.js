@@ -1,37 +1,59 @@
-// Given 2 sorted List . Merge 2 lists into 1 sorted list 
-const list1 = [1, 2, 4]
-const list2 = [1, 3, 4]
+// Given root binary tree, return average value of the node on each level in the form of an array
 
-const mergeTwoLists = function (list1, list2) {
-  let result = new ListNode()
-  let dummy = result
+function averageOfLevels(root) {
+  // Actual array list
+  let list = []
+  // To track the level 
+  let queue = []
 
-  while (list1 && list2) {
-    let list1Val = list1 && list1.val 
-    let list2Val = list2 && list2.val
-    
-    if (list1Val < list2Val) {
-      result.next = list1
-      list1 = list1 ? list1.next : null
-    } else {
-      result.next = list2
-      list2 = list2 ? list2.next : null
+  // First level average value alway itself
+  list.push(root.val)
+  queue.push(root.val)
+
+  // loop through the tree  
+  while (queue) {
+    let currentNode = queue.shift();
+    let sum = 0
+    // check if currentNode have left child 
+    if (currentNode.left) {
+      queue.push(currentNode.left)
     }
-
-    result = result.next
-
-    if(list1) {
-      result.next = list1
-    } 
-    if(list2) {
-      result.next = list2
+    // check if currentNode have right child 
+    if (currentNode.right) {
+      queue.push(currentNode.right)
     }
+    // loop through the queue to get the sum value then push to the list 
+    for (let i = 0; i < queue.length; i++) {
+      sum += queue[i]
+      list.push(sum/queue.length)
+    }
+    sum = 0
   }
-  return dummy.next
+  return list 
+};
+
+function traversalBFS(queue, list) {
+  // queue is an array to track the level of the Node
+  // list is the actual array
+
+  // Base case 
+  if (!queue.length) return list
+
+  // Recursive Case 
+  let currentNode = queue.shift();
+
+  // push value to the list 
+  list.push(currentNode.val)
+
+  // check if left child exist 
+  if (currentNode.left) {
+    queue.push(currentNode.left.val)
+  }
+  // check if right child exist 
+  if (currentNode.right) {
+    queue.push(currentNode.right.val)
+  }
+
+  return traversalBFS(queue, list)
 }
-console.log(mergeTwoLists(list1, list2));
-/*
-  list 2 : 1 3 3 3 4
-  list 1 : 1 1 2 4,4
-  [1, 1, 2, 3 , 4]
- */
+
