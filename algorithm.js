@@ -1,59 +1,20 @@
-// Given root binary tree, return average value of the node on each level in the form of an array
+// Given an array of strings strs, group the anagrams together. can => answer in any other 
+// 
+const strs = ["eat","tea","tan","ate","nat","bat"]
 
-function averageOfLevels(root) {
-  // Actual array list
-  let list = []
-  // To track the level 
-  let queue = []
+function groupAnagrams(strs) { 
+  let map = {}
 
-  // First level average value alway itself
-  list.push(root.val)
-  queue.push(root.val)
+  if (strs.length === 1) return [strs[0]]
 
-  // loop through the tree  
-  while (queue) {
-    let currentNode = queue.shift();
-    let sum = 0
-    // check if currentNode have left child 
-    if (currentNode.left) {
-      queue.push(currentNode.left)
+  for (let i = 0; i < strs.length; i++) {
+    const sortedStrs = (strs[i].split("").sort().join(""))
+    if (!map[sortedStrs]) {
+      map[sortedStrs] = [strs[i]]
+    } else {
+      map[sortedStrs].push(strs[i])
     }
-    // check if currentNode have right child 
-    if (currentNode.right) {
-      queue.push(currentNode.right)
-    }
-    // loop through the queue to get the sum value then push to the list 
-    for (let i = 0; i < queue.length; i++) {
-      sum += queue[i]
-      list.push(sum/queue.length)
-    }
-    sum = 0
   }
-  return list 
-};
-
-function traversalBFS(queue, list) {
-  // queue is an array to track the level of the Node
-  // list is the actual array
-
-  // Base case 
-  if (!queue.length) return list
-
-  // Recursive Case 
-  let currentNode = queue.shift();
-
-  // push value to the list 
-  list.push(currentNode.val)
-
-  // check if left child exist 
-  if (currentNode.left) {
-    queue.push(currentNode.left.val)
-  }
-  // check if right child exist 
-  if (currentNode.right) {
-    queue.push(currentNode.right.val)
-  }
-
-  return traversalBFS(queue, list)
+  return Object.values(map)
 }
-
+console.log(groupAnagrams(strs));

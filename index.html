@@ -11,10 +11,47 @@
   <div>
     <h1>Techinical Interview Mind Map</h1>
     <a href="https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link" target="_blank">Techinical Interview Mind Map</a>
+     <!-- Big O Notation -->
+     <div>
+      <h1>Big O Notaion</h2>
+      <ul>
+        <li>Big O : How well the problem are solved</li>
+        <h2>What is good Code ? </h2>
+        <li>1. Readable : Clean Code</li>
+        <li>2. Scalable : When the input growth bigger . How much does the algorithm slow down</li>
+        <h2>Big O</h2>
+        <li>O(1): Constant- no loops</li>
+        <li>O(log N) : Logarithmic- usually searching algorithms have log n if they are sorted (Binary Search)</li>
+        <li>O(n): Linear- for loops, while loops through n items</li>
+        <li>O(n log(n)): Log Liniear- usually sorting operations</li>
+        <li>O(n^2): Quadratic- every element in a collection needs to be compared to ever other element. Twonested loops</li>
+        <li>O(2^n): Exponential- recursive algorithms that solves a problem of size N</li>
+        <li>O(n!): Factorial- you are adding a loop for every element</li>
+        <li>Iterating through half a collection is still O(n)</li>
+        <li>Two separate collections: O(a * b)</li>
+        <h2>What cause Time in a function ?</h2>
+        <li>Operations (+ , - , * , /)</li>
+        <li>Comparisons(<,>,==)</li>
+        <li>Looping (for, while)</li>
+        <li>Outside Functions call (function())</li>
+        <h2>Rule Book</h2>
+        <li>Rule 1: Always worst Case</li>
+        <li>Rule 2: Remove Constants</li>
+        <li>Rule 3: Different inputs should have different variables . O(a+b).A and B arrays nested would be O(a*b)</li>
+        <li>+ for step in order</li>
+        <li>* for nested steps</li>
+        <h2>What cause Space complexity?</h2>
+        <li>Variables</li>
+        <li>Data Structure</li>
+        <li>Function Call</li>
+        <li>Allocations</li>
+      </ul>
+    </div>
   </div>
   <!-- Data Structrue -->
   <div>
     <h1>Data structure</h1>
+   
     <!-- What is Binary Search Tree -->
     <div>
       <h2>What is Binary Search Tree?</h2>
@@ -152,11 +189,13 @@
           <li>BFS used additional memory. Necessary to track all the child Node in order</li>
           <li>Pros : Shortest Path, CLoser Node</li>
           <li>Cons : More Memory</li>
+          <li>BFS is greate for the Shortest path</li>
           <h2>DFS (Depth First Search) O(n)</h2>
           <li>Search follow 1 branch of the tree down as many level as possible until target Node is found or the end is reach. When the search can't go on any further it continue at nearest with the unexplore child</li>
           <li>Lower memory than BFS</li>
           <li>Pros : Less Memory, Does the Path Exist ?</li>
           <li>Cons : Can Get Slow</li>
+          <li>Greate for maid solving problem or find if node exist</li>
           <h3>3 Ways to implement DFS</h3>
           <li>In-order: Traversal in order</li>
           <li>Pre-order: Start with Parent Node then child Node left to right (Good for re-create the tree)</li>
@@ -164,9 +203,38 @@
           <!-- Graph DSF and BFS -->
           <h2>Graph DFS and BFS</h2>
           <h3>Graph: BFS</h3>
-          <li>Shortest path , more Memory</li>
+          <li>Pros: Shortest path</li>
+          <li>Cons: use more Memory</li>
+          <li>BFS allow to convert a Graph , enssentually into a tree</li>
+          <li>Better if the Node we are looking for close to us </li>
           <h3>Graph: DFS</h3>
           <li>DFS : Check if you see it exist</li>
+          <li></li>
+      </ul>
+    </div>
+    <!-- Dynamic Programing -->
+    <div>
+      <h1>Dynamic Programing</h1>
+      <h3>Divide & Conquer + Memoization</h3>
+      <ul>
+        <li>If you have somthing you can cache . You can use Dynamic Programing</li>
+        <li>Dynamic Programing is the way solve problem by breaking it down into the collection of sub problem solving each of those sub problem just once </li>
+        <li>Caching (Memoization) is the way to store value we can use later on</li>
+        <li>1. Can be divide into sub problem</li>
+        <li>2. Recursive Solution</li>
+        <li>3. Are there repeated sub problem?</li>
+        <li>4. Memoize sub problem</li>
+      </ul>
+    </div>
+    <!-- Non Technical Interview -->
+    <div>
+      <h1> Non Technical Interview </h1>
+      <ul>
+        <h2>Mindset</h2>
+        <li>The biggest Mistake : Thinking that the only chance</li>
+        <li>Good way : Knowing that i have many other opportunity</li>
+        <li>Treat everything as a learning experience</li>
+
       </ul>
     </div>
   </div>
@@ -175,19 +243,27 @@
     <h1>Redux</h1>
       <ul>
         <h2>Redux Toolkits</h2>
+        <h3>Do not Mutate State in Redux</h3>
+        <li>Do Not Mutate State
+          Mutating state is the most common cause of bugs in Redux applications, including components failing to re-render properly, and will also break time-travel debugging in the Redux DevTools. Actual mutation of state values should always be avoided, both inside reducers and in all other application code.
+        </li>
         <h3>1: Create Redux Store</h3>
         <li>Use ConfigureStore to create store</li>
         <li>Inside ConfigureStore : reducer</li>
         <li>Store can store multiple slice of reducer</li>
         <h2>2 :Providing global store to the app</h2>
         <li>Use Provider to provide global store to the app</li>
-        <h2>Create Redux slice</h2>
+        <h3>Create Redux slice</h3>
         <li>Slice come from splitting up redux state object into multiple slices of state</li>
         <li>Slice is the collection of reducer logic and action for single feature in the app</li>
         <li>Use CreateSlice to create slice in react toolkit</li>
         <li>Create initial State to keep the state</li>
         <li>In CreateSlice : first come with the name, initialState and then reducers</li>
         <li>Then import sliceReducer to the store</li>
+        <h3>Reducers function</h3>
+        <li>Reducer function recive the State, and the Action</li>
+        <li>Action recive the action.type, and action.payload</li>
+        <li>Action.payload : is the form data that we send . Other word we dispatch when we dispatch the reducer function </li>
         <h2>Redux Thunk</h2>
         <li>Redux Thunk is the middleware for Redux. It allow to write Asynchronouse logic and handles Side Effect in Redux action</li>
         <li>Action Creators: Normally, an action creator in Redux returns an action object, which is then dispatched to the store. With Redux Thunk, action creators can return functions in addition to action objects.</li>
@@ -206,6 +282,6 @@
         <li>2 . Inside extraReducers addCase to the reducer. If pending (fetchSomething.pending, ) => statis will be loading , if fulfilled (fetchSomething.fulfilled) => succeeded and return data or take data from this , if rejected (fetchSomething.rejected) => return error message </li>
       </ul>
   </div>
-  <script src="binarySearchTree.js"></script>
+  <script src="algorithm.js"></script>
 </body>
 </html>
