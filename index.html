@@ -24,7 +24,7 @@
         <li>O(log N) : Logarithmic- usually searching algorithms have log n if they are sorted (Binary Search)</li>
         <li>O(n): Linear- for loops, while loops through n items</li>
         <li>O(n log(n)): Log Liniear- usually sorting operations</li>
-        <li>O(n^2): Quadratic- every element in a collection needs to be compared to ever other element. Twonested loops</li>
+        <li>O(n^2): Quadratic- every element in a collection needs to be compared to ever other element. Two nested loops</li>
         <li>O(2^n): Exponential- recursive algorithms that solves a problem of size N</li>
         <li>O(n!): Factorial- you are adding a loop for every element</li>
         <li>Iterating through half a collection is still O(n)</li>
@@ -40,6 +40,7 @@
         <li>Rule 3: Different inputs should have different variables . O(a+b).A and B arrays nested would be O(a*b)</li>
         <li>+ for step in order</li>
         <li>* for nested steps</li>
+        <li>Rule 4 : Drop non-Dominant: When analyzing the time complexity of an algorithm with multiple terms, you focus on the term that grows the fastest and dominates the others. For example, if an algorithm has O(n^2 + n), you simplify it to O(n^2).</li>
         <h2>What cause Space complexity?</h2>
         <li>Variables</li>
         <li>Data Structure</li>
@@ -282,6 +283,6 @@
         <li>2 . Inside extraReducers addCase to the reducer. If pending (fetchSomething.pending, ) => statis will be loading , if fulfilled (fetchSomething.fulfilled) => succeeded and return data or take data from this , if rejected (fetchSomething.rejected) => return error message </li>
       </ul>
   </div>
-  <script src="algorithm.js"></script>
+  <script src="algorithm/Array&Hasing /array&hashing.js"></script>
 </body>
 </html>
